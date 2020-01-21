@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Михаил Бирюков](https://up.htmlacademy.ru/htmlcss/27/user/1318859).
-* Наставник: `Неизвестно`.
+* Наставник: [Костя Соколов](https://htmlacademy.ru/profile/costigans).
 
 ---
 
