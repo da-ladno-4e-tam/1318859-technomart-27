@@ -14,7 +14,10 @@
       <div>
         <img src="img/logo-technomart.svg" width="109" height="19" alt="Техномарт">
       </div>
-      <!--форма поиска-->
+      <form action="" method="post">
+        <label for="search" class="visually-hidden">Поиск</label>
+        <input type="search" id="search" placeholder="Поиск:">
+      </form>
       <div>
         <a href="">Закладки: 0</a>
         <ul>
@@ -59,10 +62,10 @@
 
   <main>
 
-    <h1>Магазин строительных инструментов &laquo;Техномарт&raquo;</h1>
+    <h1 class="visually-hidden">Магазин строительных инструментов &laquo;Техномарт&raquo;</h1>
 
     <section>
-      <h2>Предложения магазина &laquo;Техномарт&raquo;</h2>
+      <h2 class="visually-hidden">Предложения магазина &laquo;Техномарт&raquo;</h2>
       <ul>
         <li>
           <p>Материалы</p>
@@ -87,22 +90,26 @@
           <a href="">Бесплатно</a>
         </li>
       </ul>
-      <ul>
-        <li>
-          <div>
-            <b>Дрели</b>
-            <p>Соседям на радость!</p>
-          </div>
-          <a href="catalog.html">Открыть каталог</a>
-        </li>
-        <li>
-          <div>
-            <b>Перфораторы</b>
-            <p>Настоящие мужские игрушки</p>
-          </div>
-          <a href="catalog.html">Открыть каталог</a>
-        </li>
-      </ul>
+      <div>
+        <ul>
+          <li>
+            <div>
+              <b>Дрели</b>
+              <p>Соседям на радость!</p>
+            </div>
+            <a href="catalog.html">Открыть каталог</a>
+          </li>
+          <li>
+            <div>
+              <b>Перфораторы</b>
+              <p>Настоящие мужские игрушки</p>
+            </div>
+            <a href="catalog.html">Открыть каталог</a>
+          </li>
+        </ul>
+        <button type="button" aria-label="Назад"></button>
+        <button type="button" aria-label="Вперёд"></button>
+      </div>
     </section>
 
     <section>
@@ -111,25 +118,41 @@
         <li>
           <h3><a href="">Перфоратор <span>Bosch</span> BFG 9000</a></h3>
           <img src="img/perforator-bfg-9000.jpg" width="218" height="170" alt="Сетевой перфоратор с длинным сверлом">
-          <p>32500 Р.</p>
-          <p>25500 Р.</p>
+          <p>32500 р.</p>
+          <p>25500 р.</p>
+          <div>
+            <button type="button">Купить</button>
+            <button type="button">В закладки</button>
+          </div>
         </li>
         <li>
           <h3><a href="">Перфоратор <span>Bosch</span> BFG 3000</a></h3>
           <img src="img/perforator-bfg-3000.jpg" width="218" height="170" alt="Компактный аккумуляторный перфоратор с прочной ручкой">
-          <p>22500 Р.</p>
-          <p>15500 Р.</p>
+          <p>22500 р.</p>
+          <p>15500 р.</p>
+          <div>
+            <button type="button">Купить</button>
+            <button type="button">В закладки</button>
+          </div>
         </li>
         <li>
           <h3><a href="">Перфоратор <span>Bosch</span> BFG 6000</a></h3>
           <img src="img/perforator-bfg-6000.jpg" width="218" height="170" alt="Аккумуляторный перфоратор с ограничителем глубины свердения">
-          <p>30500 Р.</p>
-          <p>25500 Р.</p>
+          <p>30500 р.</p>
+          <p>25500 р.</p>
+          <div>
+            <button type="button">Купить</button>
+            <button type="button">В закладки</button>
+          </div>
         </li>
         <li>
           <h3><a href="">Перфоратор <span>Bosch</span> BFG 2000</a></h3>
           <img src="img/perforator-bfg-2000.jpg" width="218" height="170" alt="Компактный аккумуляторный перфоратор с прочной ручкой">
-          <p>12500 Р.</p>
+          <p>12500 р.</p>
+          <div>
+            <button type="button">Купить</button>
+            <button type="button">В закладки</button>
+          </div>
         </li>
       </ul>
       <a href="">Все популярные товары</a>
@@ -191,7 +214,7 @@
       </p>
       <ul>
         <li>
-          <h3>Доставка</h3>
+          <button type="button">Доставка</button>
           <div>
             <p>Доставка</p>
             <p>
@@ -203,7 +226,7 @@
           </div>
         </li>
         <li>
-          <h3>Гарантия</h3>
+          <button type="button">Гарантия</button>
           <div>
             <p>Гарантия</p>
             <p>
@@ -214,7 +237,7 @@
           </div>
         </li>
         <li>
-          <h3>Кредит</h3>
+          <button type="button">Кредит</button>
           <div>
             <p>Кредит</p>
             <p>
@@ -288,9 +311,9 @@
         Все права защищены
       </p>
       <ul>
-        <li><a href="">ВКонтакте</a></li>
-        <li><a href="">Фэйсбук</a></li>
-        <li><a href="">Инстаграм</a></li>
+        <li><a href="" aria-label="ВКонтакте"></a></li>
+        <li><a href="" aria-label="Фэйсбук"></a></li>
+        <li><a href="" aria-label="Инстаграм"></a></li>
       </ul>
       <div>
         <p>
@@ -304,10 +327,30 @@
 
   </footer>
 
-  <!--Попап с отправкой письма-->
+  <!--Попап с картой-->
+  <figure>
+    <img src="img/map.png" width="940" height="466" alt="Большая Конюшенная, дом 19">
+  </figure>
+  <button type="button" aria-label="Закрыть"></button>
 
+  <!--Попап с отправкой письма-->
   <div>
-    <!--форма для письма-->
+    <form action="" method="post">
+      <p>
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" placeholder="Имя Фамилия">
+      </p>
+      <p>
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com">
+      </p>
+      <p>
+        <label for="letter">Текст письма:</label>
+        <textarea id="letter" name="letter" placeholder="В свободной форме"></textarea>
+      </p>
+      <button type="submit">Отправить</button>
+    </form>
+    <button type="button" aria-label="Закрыть"></button>
   </div>
 
 </body>
