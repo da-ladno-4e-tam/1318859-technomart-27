@@ -10,7 +10,7 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="inner-page">
+<body>
 
   <header class="inner-header">
 
@@ -21,7 +21,7 @@
         </a>
         <form class="search" action="https://echo.htmlacademy.ru" method="post">
           <input type="search" id="search">
-          <label for="search" aria-label="Поиск">Поиск:</label>
+          <label for="search">Поиск:</label>
           <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
             <path fill="#ffffff" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z" /></svg>
         </form>
@@ -113,11 +113,11 @@
                 </div>
 
                 <div class="price-controls">
-                  <label class="min-price"><span class="visually-hidden">Минимальная цена</span>
+                  <label><span class="visually-hidden">Минимальная цена</span>
                     <input name="min-price" type="number" value="0">
                   </label>
                   &mdash;
-                  <label class="max-price"><span class="visually-hidden">Максимальная цена</span>
+                  <label><span class="visually-hidden">Максимальная цена</span>
                     <input name="max-price" type="number" value="30000">
                   </label>
                 </div>
@@ -126,42 +126,38 @@
 
             <fieldset class="producers-fieldset">
               <legend>Производители:</legend>
-              <ul class="filter-producers-list">
-                <li>
-                  <input class="visually-hidden" type="checkbox" id="filter-bosch" name="bosch" checked>
-                  <label for="filter-bosch">Bosch</label>
-                </li>
-                <li>
-                  <input class="visually-hidden" type="checkbox" id="filter-interskol" name="interskol" disabled>
-                  <label for="filter-interskol">Интерскол</label>
-                </li>
-                <li>
-                  <input class="visually-hidden" type="checkbox" id="filter-makita" name="makita" checked>
-                  <label for="filter-makita">Makita</label>
-                </li>
-                <li>
-                  <input class="visually-hidden" type="checkbox" id="filter-dewalt" name="dewalt">
-                  <label for="filter-dewalt">Dewalt</label>
-                </li>
-                <li>
-                  <input class="visually-hidden" type="checkbox" id="filter-hitachi" name="hitachi">
-                  <label for="filter-hitachi">Hitachi</label>
-                </li>
-              </ul>
+              <div class="producer-input">
+                <input class="visually-hidden" type="checkbox" id="filter-bosch" name="bosch" checked>
+                <label for="filter-bosch">Bosch</label>
+              </div>
+              <div class="producer-input">
+                <input class="visually-hidden" type="checkbox" id="filter-interskol" name="interskol" disabled>
+                <label for="filter-interskol">Интерскол</label>
+              </div>
+              <div class="producer-input">
+                <input class="visually-hidden" type="checkbox" id="filter-makita" name="makita" checked>
+                <label for="filter-makita">Makita</label>
+              </div>
+              <div class="producer-input">
+                <input class="visually-hidden" type="checkbox" id="filter-dewalt" name="dewalt">
+                <label for="filter-dewalt">Dewalt</label>
+              </div>
+              <div class="producer-input">
+                <input class="visually-hidden" type="checkbox" id="filter-hitachi" name="hitachi">
+                <label for="filter-hitachi">Hitachi</label>
+              </div>
             </fieldset>
 
             <fieldset class="battery-fieldset">
               <legend>Питание:</legend>
-              <ul class="filter-battery-list">
-                <li>
-                  <input class="visually-hidden" type="radio" id="filter-battery" name="power" value="battery" checked>
-                  <label for="filter-battery">Аккумуляторные</label>
-                </li>
-                <li>
-                  <input class="visually-hidden" type="radio" id="filter-power" name="power" value="power">
-                  <label for="filter-power">Сетевые</label>
-                </li>
-              </ul>
+              <div class="battery-input">
+                <input class="visually-hidden" type="radio" id="filter-battery" name="power" value="battery" checked>
+                <label for="filter-battery">Аккумуляторные</label>
+              </div>
+              <div class="battery-input">
+                <input class="visually-hidden" type="radio" id="filter-power" name="power" value="power">
+                <label for="filter-power">Сетевые</label>
+              </div>
             </fieldset>
             <button type="submit" class="button">Показать</button>
           </form>

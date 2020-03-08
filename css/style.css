@@ -699,7 +699,7 @@ input[type="search"]:focus ~ .search-icon path {
   background-color: #ffffff;
 }
 
-.offers-wrapper {
+.offers {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -878,8 +878,7 @@ input[type="search"]:focus ~ .search-icon path {
   border-radius: 3px;
 }
 
-.offers-slider .left-button,
-.offers-slider .right-button {
+.offers-slider .slider-button {
   position: absolute;
   top: 114px;
 
@@ -1342,18 +1341,6 @@ input[type="search"]:focus ~ .search-icon path {
   background-color: #ffffff;
   box-shadow: 0px 1px 0 0 #ffffff, inset 0px 1px 0 0 #ffffff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .service-description-list {
   flex-grow: 1;
@@ -1907,16 +1894,8 @@ input[type="search"]:focus ~ .search-icon path {
   padding-top: 17px;
 }
 
-.filter .filter-producers-list,
-.filter .filter-battery-list {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.filter-producers-list li:not(:last-child),
-.filter-battery-list li:not(:last-child) {
+.producer-input:not(:last-child),
+.battery-input:not(:last-child) {
   margin-bottom: 16px;
 }
 
@@ -2620,12 +2599,13 @@ input[type="radio"]:disabled + label {
 
 .cart-popup {
   position: fixed;
-  top: 411px;
+  top: 50%;
   left: 50%;
   z-index: 1;
 
   display: none;
   width: 620px;
+  margin-top: -141px;
   margin-left: -310px;
 }
 

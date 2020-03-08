@@ -1,12 +1,12 @@
   let contactsButton = document.querySelector(".contacts .button");
 
   let formPopup = document.querySelector(".form-popup");
-  let formClose = formPopup.querySelector(".form-popup .close-button");
+  let formClose = document.querySelector(".form-popup .close-button");
 
-  let form = formPopup.querySelector("form");
-  let userName = formPopup.querySelector("[name=name]");
-  let email = formPopup.querySelector("[name=email]");
-  let letter = formPopup.querySelector("[name=letter]");
+  let form = document.querySelector(".form-popup form");
+  let userName = document.querySelector(".form-popup [name=name]");
+  let email = document.querySelector(".form-popup [name=email]");
+  let letter = document.querySelector(".form-popup [name=letter]");
 
   let isStorageSupport = true;
   let storage = "";
@@ -17,36 +17,42 @@
     isStorageSupport = false;
   }
 
-  contactsButton.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    formPopup.classList.add("modal-show");
-
-    if (storage) {
-      userName.value = storage;
-      email.focus();
-    } else {
-      userName.focus();
-    }
-  });
-
-  formClose.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    formPopup.classList.remove("modal-show");
-    formPopup.classList.remove("modal-error");
-  });
-
-  form.addEventListener("submit", function (evt) {
-    if (!userName.value || !email.value || !letter.value) {
+  if (contactsButton) {
+    contactsButton.addEventListener("click", function (evt) {
       evt.preventDefault();
-      formPopup.classList.remove("modal-error");
-      formPopup.offsetWidth = formPopup.offsetWidth;
-      formPopup.classList.add("modal-error");
-    } else {
-      if (isStorageSupport) {
-        localStorage.setItem("userName", userName.value);
+      formPopup.classList.add("modal-show");
+
+      if (storage) {
+        userName.value = storage;
+        email.focus();
+      } else {
+        userName.focus();
       }
-    }
-  });
+    });
+  }
+
+  if (formClose) {
+    formClose.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      formPopup.classList.remove("modal-show");
+      formPopup.classList.remove("modal-error");
+    });
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (evt) {
+      if (!userName.value || !email.value || !letter.value) {
+        evt.preventDefault();
+        formPopup.classList.remove("modal-error");
+        formPopup.offsetWidth = formPopup.offsetWidth;
+        formPopup.classList.add("modal-error");
+      } else {
+        if (isStorageSupport) {
+          localStorage.setItem("userName", userName.value);
+        }
+      }
+    });
+  }
 
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
@@ -62,17 +68,21 @@
 
   let mapButton = document.querySelector(".contacts figure");
   let mapPopup = document.querySelector(".map-popup");
-  let mapClose = mapPopup.querySelector(".close-button");
+  let mapClose = document.querySelector(".map-popup .close-button");
 
-  mapButton.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    mapPopup.classList.add("modal-show");
-  });
+  if (mapButton) {
+    mapButton.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      mapPopup.classList.add("modal-show");
+    });
+  }
 
-  mapClose.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    mapPopup.classList.remove("modal-show");
-  });
+  if (mapClose) {
+    mapClose.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      mapPopup.classList.remove("modal-show");
+    });
+  }
 
   window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
@@ -102,12 +112,17 @@
   let serviceSliderButtons = document.querySelectorAll(".service-name a");
   let serviceSliderDescriptions = document.querySelectorAll(".service-description");
 
-  for (i = 0; i < serviceSliderButtons.length; ++i) {
+  for (let i = 0; i < serviceSliderButtons.length; i++) {
     serviceSliderButtons[i].addEventListener("click", function (evt) {
-      evt.preventDefault();
-      serviceSliderButtons[0].classList.remove("active-button");
-      serviceSliderDescriptions[0].classList.add("hidden");
-      serviceSliderDescriptions[i].classList.remove("hidden");
+        evt.preventDefault();
+        for (let serviceSliderButton of serviceSliderButtons) {
+          serviceSliderButton.classList.remove("active-button");
+        };
+        serviceSliderButtons[i].classList.add("active-button");
+        for (let serviceSliderDescription of serviceSliderDescriptions) {
+          serviceSliderDescription.classList.add("hidden");
+        };
+        serviceSliderDescriptions[i].classList.remove("hidden");
     });
   }
 
@@ -117,7 +132,8 @@
 
   let buyButtons = document.querySelectorAll(".catalog-goods .buy-button");
   let cartPopup = document.querySelector(".cart-popup");
-  let cartClose = cartPopup.querySelector(".close-button");
+  let cartClose = document.querySelector(".cart-popup .close-button");
+  let continueButton = document.querySelector(".cart-popup .continue-button");
 
   for (let buyButton of buyButtons) {
     buyButton.addEventListener("click", function (evt) {
@@ -126,6 +142,11 @@
     });
 
     cartClose.addEventListener("click", function (evt) {
+      evt.preventDefault();
+      cartPopup.classList.remove("modal-show");
+    });
+
+    continueButton.addEventListener("click", function (evt) {
       evt.preventDefault();
       cartPopup.classList.remove("modal-show");
     });
