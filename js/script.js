@@ -99,8 +99,8 @@
   let drills = document.querySelector(".offers-slider .drills");
   let perforators = document.querySelector(".offers-slider .perforators");
 
-  for (let sliderButton of sliderButtons) {
-    sliderButton.addEventListener("click", function (evt) {
+  for (let i = 0; i < sliderButtons.length; i++) {
+    sliderButtons[i].addEventListener("click", function (evt) {
       evt.preventDefault();
       drills.classList.toggle("visually-hidden");
       perforators.classList.toggle("visually-hidden");
@@ -114,15 +114,15 @@
 
   for (let i = 0; i < serviceSliderButtons.length; i++) {
     serviceSliderButtons[i].addEventListener("click", function (evt) {
-        evt.preventDefault();
-        for (let serviceSliderButton of serviceSliderButtons) {
-          serviceSliderButton.classList.remove("active-button");
-        };
-        serviceSliderButtons[i].classList.add("active-button");
-        for (let serviceSliderDescription of serviceSliderDescriptions) {
-          serviceSliderDescription.classList.add("hidden");
-        };
-        serviceSliderDescriptions[i].classList.remove("hidden");
+      evt.preventDefault();
+      for (let i = 0; i < serviceSliderButtons.length; i++) {
+        serviceSliderButtons[i].classList.remove("active-button");
+      };
+      serviceSliderButtons[i].classList.add("active-button");
+      for (let i = 0; i < serviceSliderDescriptions.length; i++) {
+        serviceSliderDescriptions[i].classList.add("hidden");
+      };
+      serviceSliderDescriptions[i].classList.remove("hidden");
     });
   }
 
@@ -130,13 +130,13 @@
 
 
 
-  let buyButtons = document.querySelectorAll(".catalog-goods .buy-button");
+  let buyButtons = document.querySelectorAll(".buy-button");
   let cartPopup = document.querySelector(".cart-popup");
   let cartClose = document.querySelector(".cart-popup .close-button");
   let continueButton = document.querySelector(".cart-popup .continue-button");
 
-  for (let buyButton of buyButtons) {
-    buyButton.addEventListener("click", function (evt) {
+  for (let i = 0; i < buyButtons.length; i++) {
+    buyButtons[i].addEventListener("click", function (evt) {
       evt.preventDefault();
       cartPopup.classList.add("modal-show");
     });
