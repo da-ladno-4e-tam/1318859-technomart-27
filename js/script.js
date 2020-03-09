@@ -1,15 +1,15 @@
-  let contactsButton = document.querySelector(".contacts .button");
+  var contactsButton = document.querySelector(".contacts .button");
 
-  let formPopup = document.querySelector(".form-popup");
-  let formClose = document.querySelector(".form-popup .close-button");
+  var formPopup = document.querySelector(".form-popup");
+  var formClose = document.querySelector(".form-popup .close-button");
 
-  let form = document.querySelector(".form-popup form");
-  let userName = document.querySelector(".form-popup [name=name]");
-  let email = document.querySelector(".form-popup [name=email]");
-  let letter = document.querySelector(".form-popup [name=letter]");
+  var form = document.querySelector(".form-popup form");
+  var userName = document.querySelector(".form-popup [name=name]");
+  var email = document.querySelector(".form-popup [name=email]");
+  var letter = document.querySelector(".form-popup [name=letter]");
 
-  let isStorageSupport = true;
-  let storage = "";
+  var isStorageSupport = true;
+  var storage = "";
 
   try {
     storage = localStorage.getItem("userName");
@@ -66,9 +66,9 @@
 
 
 
-  let mapButton = document.querySelector(".contacts figure");
-  let mapPopup = document.querySelector(".map-popup");
-  let mapClose = document.querySelector(".map-popup .close-button");
+  var mapButton = document.querySelector(".contacts figure");
+  var mapPopup = document.querySelector(".map-popup");
+  var mapClose = document.querySelector(".map-popup .close-button");
 
   if (mapButton) {
     mapButton.addEventListener("click", function (evt) {
@@ -95,11 +95,11 @@
 
 
 
-  let sliderButtons = document.querySelectorAll(".offers-slider .slider-button");
-  let drills = document.querySelector(".offers-slider .drills");
-  let perforators = document.querySelector(".offers-slider .perforators");
+  var sliderButtons = document.querySelectorAll(".offers-slider .slider-button");
+  var drills = document.querySelector(".offers-slider .drills");
+  var perforators = document.querySelector(".offers-slider .perforators");
 
-  for (let i = 0; i < sliderButtons.length; i++) {
+  for (var i = 0; i < sliderButtons.length; i++) {
     sliderButtons[i].addEventListener("click", function (evt) {
       evt.preventDefault();
       drills.classList.toggle("visually-hidden");
@@ -109,20 +109,22 @@
 
 
 
-  let serviceSliderButtons = document.querySelectorAll(".service-name a");
-  let serviceSliderDescriptions = document.querySelectorAll(".service-description");
+  var serviceSliderButtons = document.querySelectorAll(".service-name a");
+  var serviceSliderDescriptions = document.querySelectorAll(".service-description");
 
-  for (let i = 0; i < serviceSliderButtons.length; i++) {
-    serviceSliderButtons[i].addEventListener("click", function (evt) {
+  for (var i = 0; i < serviceSliderButtons.length; i++) {
+    let hasSliderButton = serviceSliderButtons[i];
+    let hasSliderDescription = serviceSliderDescriptions[i];
+    hasSliderButton.addEventListener("click", function (evt) {
       evt.preventDefault();
-      for (let i = 0; i < serviceSliderButtons.length; i++) {
+      for (var i = 0; i < serviceSliderButtons.length; i++) {
         serviceSliderButtons[i].classList.remove("active-button");
       };
-      serviceSliderButtons[i].classList.add("active-button");
-      for (let i = 0; i < serviceSliderDescriptions.length; i++) {
+      hasSliderButton.classList.add("active-button");
+      for (var i = 0; i < serviceSliderDescriptions.length; i++) {
         serviceSliderDescriptions[i].classList.add("hidden");
       };
-      serviceSliderDescriptions[i].classList.remove("hidden");
+      hasSliderDescription.classList.remove("hidden");
     });
   }
 
@@ -130,12 +132,12 @@
 
 
 
-  let buyButtons = document.querySelectorAll(".buy-button");
-  let cartPopup = document.querySelector(".cart-popup");
-  let cartClose = document.querySelector(".cart-popup .close-button");
-  let continueButton = document.querySelector(".cart-popup .continue-button");
+  var buyButtons = document.querySelectorAll(".buy-button");
+  var cartPopup = document.querySelector(".cart-popup");
+  var cartClose = document.querySelector(".cart-popup .close-button");
+  var continueButton = document.querySelector(".cart-popup .continue-button");
 
-  for (let i = 0; i < buyButtons.length; i++) {
+  for (var i = 0; i < buyButtons.length; i++) {
     buyButtons[i].addEventListener("click", function (evt) {
       evt.preventDefault();
       cartPopup.classList.add("modal-show");
