@@ -66,7 +66,7 @@
 
 
 
-  var mapButton = document.querySelector(".contacts figure");
+  var mapButton = document.querySelector(".contacts .map");
   var mapPopup = document.querySelector(".map-popup");
   var mapClose = document.querySelector(".map-popup .close-button");
 

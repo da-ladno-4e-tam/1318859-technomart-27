@@ -588,36 +588,36 @@ input[type="search"]:focus ~ label .search-icon {
 
 }
 
-.user-links {
+.user-link {
   font-size: 16px;
   line-height: 16px;
   color: #32425c;
   text-decoration: underline;
 }
 
-.user-links:hover,
-.user-links:focus {
+.user-link:hover,
+.user-link:focus {
   font-size: 16px;
   color: #ee3643;
   text-decoration: underline;
 }
 
-.user-links:active {
+.user-link:active {
   color: #32425c;
 
   opacity: 0.3;
 }
 
-.user-links:first-child {
+.user-link:first-child {
   position: relative;
   padding-right: 20px;
 }
 
-.user-links:last-child {
+.user-link:last-child {
   padding-left: 12px;
 }
 
-.user-links:first-child::after {
+.user-link:first-child::after {
   content: "";
 
   position: absolute;
@@ -1388,40 +1388,19 @@ input[type="search"]:focus ~ label .search-icon {
   height: 100%;
 }
 
-.services-content {
-  height: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.service-description .delivery {
+.service-description.delivery {
   background-image: url("../img/slider-delivery.png");
   background-repeat: no-repeat;
   background-position: bottom right;
 }
 
-.service-description .guarantee {
+.service-description.guarantee {
   background-image: url("../img/slider-guarantee.png");
   background-repeat: no-repeat;
   background-position: bottom right;
 }
 
-.service-description .credit {
+.service-description.credit {
   background-image: url("../img/slider-credit.png");
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -1880,7 +1859,13 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .producers-fieldset legend {
+  padding-top: 17px;
   padding-bottom: 11px;
+}
+
+.battery-fieldset legend {
+  padding-top: 17px;
+  padding-bottom: 12px;
 }
 
 .filter-form .producers-fieldset {
@@ -1889,17 +1874,8 @@ input[type="search"]:focus ~ label .search-icon {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.battery-fieldset legend {
-  padding-bottom: 12px;
-}
-
 .filter-form .battery-fieldset {
   margin-bottom: 76px;
-}
-
-.producers-fieldset legend,
-.battery-fieldset legend {
-  padding-top: 17px;
 }
 
 .producer-input:not(:last-child),
