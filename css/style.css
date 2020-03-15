@@ -991,7 +991,8 @@ input[type="search"]:focus ~ label .search-icon {
 
 .goods-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -1007,7 +1008,7 @@ input[type="search"]:focus ~ label .search-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 220px;
+  width: 218px;
   margin: 0;
   margin-right: 20px;
   margin-bottom: 21px;
@@ -1022,7 +1023,7 @@ input[type="search"]:focus ~ label .search-icon {
   border: 1px solid #e5e5e5;
 }
 
-.goods-item:last-child {
+.goods-item:nth-child(4n) {
   margin-right: 0;
 }
 
@@ -1223,7 +1224,7 @@ input[type="search"]:focus ~ label .search-icon {
   display: flex;
   order: 2;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-content: space-between;
   width: 100%;
   min-height: 310px;
@@ -1234,12 +1235,18 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .producers-item {
-  width: 220px;
+  width: 218px;
   height: 145px;
   margin: 0;
+  margin-right: 20px;
+  margin-bottom: 20px;
   padding: 0;
 
   border: solid 1px #e5e5e5;
+}
+
+.producers-item:nth-child(4n) {
+  margin-right: 0;
 }
 
 .producers-item a {
@@ -2018,15 +2025,7 @@ input[type="radio"]:disabled + label {
 }
 
 .catalog-goods .goods-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 100%;
-  margin: 0;
   margin-bottom: 33px;
-  padding: 0;
-
-  list-style: none;
 }
 
 .catalog-goods .goods-item {
