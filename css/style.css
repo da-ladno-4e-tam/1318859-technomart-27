@@ -33,8 +33,6 @@ img {
   height: 1px !important;
   padding: 0 !important;
   clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
 
   border: 0 !important;
@@ -71,9 +69,6 @@ img {
 
 .main-header,
 .inner-header {
-  /*  display: flex;
-  flex-direction: column;
-  align-items: center;*/
   padding-bottom: 60px;
 
   background-color: #f4f7f9;
@@ -142,6 +137,7 @@ img {
 
 .search label {
   position: absolute;
+  top: 0;
   left: 0;
   padding-left: 49px;
 
@@ -159,12 +155,15 @@ img {
   padding-right: 20px;
   padding-bottom: 11px;
   padding-left: 49px;
+  color: #293449;
 
   background-color: #293449;
   border: none;
 }
 
 .search input:hover {
+  color: #212a3a;
+
   background-color: #212a3a;
 }
 
@@ -195,7 +194,7 @@ input[type="search"]:focus ~ label .search-icon {
 .bookmark {
   position: relative;
 
-  min-width: 150px;
+  width: 150px;
   padding-top: 12px;
   padding-right: 10px;
   padding-bottom: 11px;
@@ -269,12 +268,11 @@ input[type="search"]:focus ~ label .search-icon {
   background-color: #ba2732;
 }
 
-.cart::before {
+.cart::before,
+.buy-button::before {
   content: "";
 
   position: absolute;
-  top: 12px;
-  left: 18px;
 
   width: 15px;
   height: 15px;
@@ -284,6 +282,11 @@ input[type="search"]:focus ~ label .search-icon {
   background-position: 0 0;
 
   opacity: 0.3;
+}
+
+.cart::before {
+  top: 12px;
+  left: 17px;
 }
 
 .cart:hover,
@@ -315,7 +318,7 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .order-list li {
-  min-width: 150px;
+  width: 150px;
 }
 
 .order-button {
@@ -366,8 +369,9 @@ input[type="search"]:focus ~ label .search-icon {
   color: #ee3643;
 }
 
-.middle-menu .header-contacts {
+.header-contacts {
   min-width: 270px;
+  max-width: 350px;
   margin: 0;
   margin-left: 3px;
 
@@ -376,15 +380,13 @@ input[type="search"]:focus ~ label .search-icon {
   color: #32425c;
 }
 
+.middle-menu .header-contacts {
+  margin-left: 12px;
+}
+
 .inner-header .header-contacts {
-  min-width: 270px;
-  margin: 0;
   margin-left: auto;
   padding-left: 19px;
-
-  font-size: 14px;
-  line-height: 24px;
-  color: #32425c;
 }
 
 .header-contacts a {
@@ -398,7 +400,7 @@ input[type="search"]:focus ~ label .search-icon {
 
   font-size: 21px;
   line-height: 21px;
-  color: #e9292a;
+  color: #ee3643;
   text-decoration: none;
 
   border: 3px solid #ffffff;
@@ -427,7 +429,6 @@ input[type="search"]:focus ~ label .search-icon {
 
 .middle-menu .user-list {
   display: flex;
-  align-self: flex-start;
   margin: 0;
   padding: 0;
 }
@@ -451,8 +452,9 @@ input[type="search"]:focus ~ label .search-icon {
   position: relative;
 
   display: flex;
+  justify-content: flex-end;
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   margin-left: 52px;
   padding: 0;
 }
@@ -464,6 +466,7 @@ input[type="search"]:focus ~ label .search-icon {
   padding: 12px 0;
 
   font-size: 21px;
+  line-height: 21px;
   color: #000000;
   text-transform: none;
 
@@ -476,6 +479,7 @@ input[type="search"]:focus ~ label .search-icon {
 
   min-width: 121px;
   margin-right: 10px;
+  margin-left: 10px;
   padding-left: 47px;
   padding-right: 25px;
 
@@ -590,7 +594,7 @@ input[type="search"]:focus ~ label .search-icon {
 
 .user-link {
   font-size: 16px;
-  line-height: 16px;
+  line-height: 18px;
   color: #32425c;
   text-decoration: underline;
 }
@@ -652,14 +656,15 @@ input[type="search"]:focus ~ label .search-icon {
   display: flex;
   flex-grow: 1;
   align-items: center;
+  max-width: 190px;
 }
 
 .header-nav-item a {
   display: block;
   width: 100%;
-  padding: 18px 30px;
+  padding: 22px 30px;
 
-  font-size: 17px;
+  line-height: 17px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -673,7 +678,8 @@ input[type="search"]:focus ~ label .search-icon {
   text-decoration: underline;
 }
 
-.header-nav-item:active {
+.header-nav-item:active,
+.header-nav-item.active {
   background-color: #1d2739;
   box-shadow: none;
 }
@@ -830,8 +836,7 @@ input[type="search"]:focus ~ label .search-icon {
   position: relative;
 
   height: 100%;
-  padding-top: 23px;
-  padding-left: 24px;
+  padding: 23px 24px;
 
   color: #ffffff;
 
@@ -861,6 +866,7 @@ input[type="search"]:focus ~ label .search-icon {
   bottom: 22px;
 
   min-width: 195px;
+  max-width: 250px;
   padding: 10px 25px;
 
   border-radius: 3px;
@@ -955,12 +961,14 @@ input[type="search"]:focus ~ label .search-icon {
   min-height: 89px;
   margin: 0;
   margin-bottom: 20px;
-  padding-top: 33px;
+  padding-top: 30px;
   padding-right: 300px;
+  padding-bottom: 26px;
   padding-left: 28px;
 
   font-weight: normal;
   font-size: 30px;
+  line-height: 30px;
   vertical-align: middle;
   color: #32425c;
   text-transform: uppercase;
@@ -1008,7 +1016,7 @@ input[type="search"]:focus ~ label .search-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 218px;
+  width: 220px;
   margin: 0;
   margin-right: 20px;
   margin-bottom: 21px;
@@ -1056,7 +1064,7 @@ input[type="search"]:focus ~ label .search-icon {
   margin: 0;
   margin-bottom: 10px;
   margin-left: 4px;
-  padding: 0;
+  padding: 0 5px;
 
   line-height: 18px;
   color: #a9a9a9;
@@ -1128,6 +1136,7 @@ input[type="search"]:focus ~ label .search-icon {
   top: 0;
   left: 0;
 
+  display: none;
   width: 213px;
   height: 170px;
   margin: 0;
@@ -1137,36 +1146,43 @@ input[type="search"]:focus ~ label .search-icon {
   z-index: 1;
 }
 
-.goods-item button {
+.goods-item:hover .actions {
+  display: block;
+}
+
+.actions button,
+.actions a {
   display: block;
   width: 135px;
   min-height: 38px;
   margin: 0 auto;
+
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Cuprum", Arial, sans-serif;
 
   text-transform: uppercase;
 
   border-radius: 3px;
 }
 
-.goods-item .actions {
-  display: none;
-}
-
-.goods-item:hover .actions {
-  display: block;
-}
-
 .goods-item .buy-button {
-  margin-bottom: 8px;
+  position: relative;
 
-  font-size: 14px;
-  line-height: 18px;
-  font-family: "Cuprum", Arial, sans-serif;
+  margin-bottom: 8px;
+  padding-top: 10px;
+
   color: #ffffff;
 
   background-color: #63a63e;
   border: none;
   box-shadow: inset 0px -3px 0 0 #367315;
+}
+
+.buy-button::before {
+  top: 11px;
+  left: 13px;
 }
 
 .goods-item .buy-button:hover {
@@ -1185,9 +1201,6 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .goods-item .mark-button {
-  font-size: 14px;
-  line-height: 18px;
-  font-family: "Cuprum", Arial, sans-serif;
   color: #32425c;
 
   background-color: #ffffff;
@@ -1216,7 +1229,7 @@ input[type="search"]:focus ~ label .search-icon {
   align-content: space-between;
   width: 940px;
   margin: 0 auto;
-  margin-bottom: 85px;
+  margin-bottom: 65px;
   padding: 0;
 }
 
@@ -1235,7 +1248,7 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .producers-item {
-  width: 218px;
+  width: 220px;
   height: 145px;
   margin: 0;
   margin-right: 20px;
@@ -1298,6 +1311,7 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .services-text {
+  width: 400px;
   margin-bottom: 20px;
 
   font-size: 13px;
@@ -1305,6 +1319,18 @@ input[type="search"]:focus ~ label .search-icon {
   font-family: "PT Sans", Arial, sans-serif;
   text-align: left;
   color: #000000;
+}
+
+.delivery .services-text {
+  width: 275px;
+}
+
+.guarantee .services-text {
+  width: 380px;
+}
+
+.credit .services-text {
+  width: 280px;
 }
 
 .service-slider-wrapper {
@@ -1318,7 +1344,7 @@ input[type="search"]:focus ~ label .search-icon {
 .service-name-list {
   margin: 0;
   padding: 0;
-  padding-top: 50px;
+  padding-top: 49px;
   padding-bottom: 99px;
 }
 
@@ -1362,13 +1388,13 @@ input[type="search"]:focus ~ label .search-icon {
   padding-top: 48px;
   padding-left: 80px;
 
-    box-shadow: -30px -15px 20px -40px #000000;
+  box-shadow: -30px -15px 20px -40px #000000;
 }
 
 .service-description-list .services-title {
   width: 320px;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 
   font-size: 36px;
   line-height: 36px;
@@ -1376,17 +1402,17 @@ input[type="search"]:focus ~ label .search-icon {
   text-transform: uppercase;
 }
 
-.service-description-list .services-text {
-  width: 320px;
-  margin-bottom: 0;
-}
-
 .credit .services-text {
   margin-bottom: 25px;
 }
 
 .credit .button {
+  display: inline-block;
+  max-width: 250px;
+  margin-bottom: 10px;
   padding: 10px 44px;
+
+  vertical-align: middle;
 
   border-radius: 3px;
 }
@@ -1434,6 +1460,7 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .info p:nth-child(3) {
+  width: 386px;
   margin-bottom: 21px;
 }
 
@@ -1484,6 +1511,7 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .contacts p {
+  width: 180px;
   margin-bottom: 32px;
 }
 
@@ -1519,15 +1547,17 @@ input[type="search"]:focus ~ label .search-icon {
 
 .catalog-title {
   width: 940px;
-  height: 89px;
+  min-height: 89px;
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
-  padding-top: 33px;
+  padding-top: 29px;
+  padding-bottom: 30px;
   padding-left: 27px;
 
   font-weight: normal;
   font-size: 30px;
+  line-height: 30px;
   color: #32425c;
   text-transform: uppercase;
 
@@ -1536,6 +1566,7 @@ input[type="search"]:focus ~ label .search-icon {
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   order: -1;
   width: 940px;
   min-height: 59px;
@@ -1549,6 +1580,7 @@ input[type="search"]:focus ~ label .search-icon {
 .breadcrumbs-item {
   position: relative;
 
+  margin-bottom: 10px;
   padding-left: 40px;
 
   font-size: 13px;
@@ -1595,9 +1627,9 @@ input[type="search"]:focus ~ label .search-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 38px;
+  min-height: 38px;
   margin: 0;
-  margin-bottom: 21px;
+  margin-bottom: 19px;
   padding: 0;
   padding-right: 17px;
   padding-left: 19px;
@@ -1611,8 +1643,9 @@ input[type="search"]:focus ~ label .search-icon {
 }
 
 .sorting p {
+  max-width: 120px;
   margin: 0;
-  margin-right: 139px;
+  margin-right: 135px;
   padding: 0;
 
   font-size: 13px;
@@ -1630,12 +1663,16 @@ input[type="search"]:focus ~ label .search-icon {
   padding: 0;
 }
 
+.sort-buttons-list li {
+  padding: 0 5px;
+}
+
 .sort-direction-list {
   display: flex;
   justify-content: space-between;
   width: 43px;
   margin: 0;
-  margin-left: 46px;
+  margin-left: 42px;
   padding: 0;
 }
 
@@ -1715,11 +1752,12 @@ input[type="search"]:focus ~ label .search-icon {
   min-height: 38px;
   margin: 0;
   padding: 0;
+  padding-top: 10px;
   padding-left: 18px;
 
   font-weight: normal;
   font-size: 13px;
-  line-height: 38px;
+  line-height: 18px;
   font-family: "PT Sans", Arial, sans-serif;
   color: #000000;
   text-transform: uppercase;
@@ -1867,31 +1905,32 @@ input[type="search"]:focus ~ label .search-icon {
 
 .producers-fieldset legend {
   padding-top: 17px;
-  padding-bottom: 11px;
+  padding-bottom: 12px;
 }
 
 .battery-fieldset legend {
   padding-top: 17px;
-  padding-bottom: 12px;
+  padding-bottom: 13px;
 }
 
 .filter-form .producers-fieldset {
-  padding-bottom: 21px;
+  padding-bottom: 23px;
 
   border-bottom: 1px solid #e5e5e5;
 }
 
 .filter-form .battery-fieldset {
-  margin-bottom: 76px;
+  margin-bottom: 79px;
 }
 
 .producer-input:not(:last-child),
 .battery-input:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
+  display: block;
   position: relative;
   padding-left: 35px;
   cursor: pointer;
@@ -1988,7 +2027,8 @@ input[type="radio"]:disabled + label {
 }
 
 .filter .button {
-  width: 140px;
+  min-width: 140px;
+  max-width: 200px;
 
   font-size: 13px;
   line-height: 18px;
@@ -2025,13 +2065,13 @@ input[type="radio"]:disabled + label {
 }
 
 .catalog-goods .goods-list {
-  margin-bottom: 33px;
+  margin-bottom: 32px;
 }
 
 .catalog-goods .goods-item {
   width: 220px;
   margin: 0;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   padding: 0;
   padding-bottom: 20px;
 }
@@ -2061,9 +2101,9 @@ input[type="radio"]:disabled + label {
 
 .page a {
   display: block;
-  width: 38px;
-  height: 38px;
-  padding: 10px;
+  min-width: 38px;
+  height: 100%;
+  padding: 9px;
 
   font-size: 13px;
   line-height: 18px;
@@ -2078,7 +2118,7 @@ input[type="radio"]:disabled + label {
 
 .page:first-child a,
 .page:last-child a {
-  width: 140px;
+  min-width: 140px;
 }
 
 .page:first-child {
@@ -2123,7 +2163,7 @@ input[type="radio"]:disabled + label {
   width: 910px;
   margin: 0;
   padding: 0;
-  padding-bottom: 70px;
+  padding-bottom: 68px;
 }
 
 .footer {
@@ -2191,9 +2231,14 @@ input[type="radio"]:disabled + label {
   list-style: none;
 }
 
-.footer a {
+.footer a,
+.footer-menu .current,
+.footer-menu .current:hover,
+.footer-menu .current:focus,
+.footer-menu .current:active {
   color: #f1f5f7;
   text-decoration: none;
+  opacity: 1;
 }
 
 .footer a:hover,
@@ -2224,6 +2269,11 @@ input[type="radio"]:disabled + label {
   padding-left: 3px;
 
   font-style: normal;
+  color: #f3f7f9;
+}
+
+.footer-middle .phone {
+  display: block;
 }
 
 .catalog-list {
@@ -2267,6 +2317,8 @@ input[type="radio"]:disabled + label {
   padding: 0;
   padding-top: 2px;
   padding-left: 1px;
+
+  color: #ffffff;
 }
 
 .social-list {
@@ -2280,6 +2332,7 @@ input[type="radio"]:disabled + label {
 .social-item {
   width: 42px;
   height: 42px;
+  margin-bottom: 5px;
   overflow: hidden;
 
   text-align: center;
@@ -2332,6 +2385,7 @@ input[type="radio"]:disabled + label {
 .footer-bottom .developer {
   display: flex;
   flex-wrap: wrap;
+  flex-shrink: 0;
   justify-content: flex-end;
   max-width: 300px;
   margin: 0;
@@ -2343,6 +2397,8 @@ input[type="radio"]:disabled + label {
 .developer p {
   margin: 0;
   margin-bottom: 10px;
+
+  color: #ffffff;
 }
 
 .developer p:nth-child(2n) {
@@ -2410,7 +2466,7 @@ input[type="radio"]:disabled + label {
   box-shadow: 0px 0px 16px 0 rgba(0, 0, 0, 0.5);
 }
 
-.map-popup figure {
+.map-popup img {
   position: absolute;
   top: 0;
   left: 0;
@@ -2588,10 +2644,12 @@ input[type="radio"]:disabled + label {
   min-height: 170px;
   margin: 0;
   padding: 0;
+  padding-top: 70px;
+  padding-right: 30px;
   padding-left: 179px;
 
   font-size: 30px;
-  line-height: 170px;
+  line-height: 30px;
   color: #000000;
 
   background-image: url("../img/icons/icon-mark.svg");
@@ -2615,6 +2673,7 @@ input[type="radio"]:disabled + label {
   margin: 0;
 
   font-size: 14px;
+  line-height: 18px;
   text-align: center;
   color: #000000;
 

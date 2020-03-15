@@ -1,13 +1,10 @@
   var contactsButton = document.querySelector(".contacts .button");
-
   var formPopup = document.querySelector(".form-popup");
   var formClose = document.querySelector(".form-popup .close-button");
-
   var form = document.querySelector(".form-popup form");
   var userName = document.querySelector(".form-popup [name=name]");
   var email = document.querySelector(".form-popup [name=email]");
   var letter = document.querySelector(".form-popup [name=letter]");
-
   var isStorageSupport = true;
   var storage = "";
 
@@ -21,7 +18,6 @@
     contactsButton.addEventListener("click", function (evt) {
       evt.preventDefault();
       formPopup.classList.add("modal-show");
-
       if (storage) {
         userName.value = storage;
         email.focus();
@@ -65,7 +61,6 @@
   });
 
 
-
   var mapButton = document.querySelector(".contacts .map");
   var mapPopup = document.querySelector(".map-popup");
   var mapClose = document.querySelector(".map-popup .close-button");
@@ -94,7 +89,6 @@
   });
 
 
-
   var sliderButtons = document.querySelectorAll(".offers-slider .slider-button");
   var drills = document.querySelector(".offers-slider .drills");
   var perforators = document.querySelector(".offers-slider .perforators");
@@ -106,7 +100,6 @@
       perforators.classList.toggle("visually-hidden");
     });
   }
-
 
 
   var serviceSliderButtons = document.querySelectorAll(".service-name a");
@@ -127,9 +120,6 @@
       hasSliderDescription.classList.remove("hidden");
     });
   }
-
-
-
 
 
   var buyButtons = document.querySelectorAll(".buy-button");
