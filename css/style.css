@@ -1103,11 +1103,7 @@ input[type="search"]:focus ~ label .search-icon {
   background-size: auto 100%;
 }
 
-.materials::after,
-.popular .goods-item:last-child::after,
-.goods-wrapper .goods-item:nth-child(3)::after,
-.goods-wrapper .goods-item:nth-child(5)::after,
-.goods-wrapper .goods-item:nth-child(7)::after {
+li.new::after {
   content: "new";
   z-index: 1;
 
@@ -1975,10 +1971,14 @@ input[type="checkbox"]:focus + label:before {
 
 input[type="checkbox"]:disabled + label:before {
   opacity: 0.75;
+
+  cursor: default;
 }
 
 input[type="checkbox"]:disabled + label {
   opacity: 0.4;
+
+  cursor: default;
 }
 
 input[type="radio"] + label:before {
@@ -2020,10 +2020,14 @@ input[type="radio"]:focus + label:before {
 
 input[type="radio"]:disabled + label:before {
   opacity: 0.75;
+
+  cursor: default;
 }
 
 input[type="radio"]:disabled + label {
   opacity: 0.4;
+
+  cursor: default;
 }
 
 .filter .button {
